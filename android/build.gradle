@@ -20,9 +20,8 @@ def safeExtGet(prop, fallback) {
 
 android {
     compileSdkVersion safeExtGet('ReactNativeWechatLib_compileSdkVersion', 30)
-    buildToolsVersion safeExtGet('ReactNativeWechatLib_buildToolsVersion', 16)
     defaultConfig {
-      minSdkVersion 16
+      minSdkVersion safeExtGet('ReactNativeWechatLib_minSdkVersion', 16)
       targetSdkVersion safeExtGet('ReactNativeWechatLib_targetSdkVersion', 30)
       versionCode 1
       versionName "1.0"
