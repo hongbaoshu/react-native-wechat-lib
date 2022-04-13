@@ -1,5 +1,7 @@
 package com.theweflex.react;
 
+import androidx.annotation.NonNull;
+
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
 import com.facebook.react.bridge.NativeModule;
@@ -11,6 +13,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class WeChatPackage implements ReactPackage {
+    @NonNull
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
         return Arrays.asList(new NativeModule[]{
@@ -23,6 +26,7 @@ public class WeChatPackage implements ReactPackage {
         return Collections.emptyList();
     }
 
+    @NonNull
     @Override
     public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
         return Collections.emptyList();
