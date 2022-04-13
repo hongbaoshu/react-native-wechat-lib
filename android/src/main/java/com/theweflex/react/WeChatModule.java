@@ -23,6 +23,7 @@ import com.facebook.imagepipeline.request.ImageRequest;
 import com.facebook.imagepipeline.request.ImageRequestBuilder;
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.Callback;
+
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
@@ -67,7 +68,9 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.UUID;
 
+@ReactModule(name = WeChatModule.NAME)
 public class WeChatModule extends ReactContextBaseJavaModule implements IWXAPIEventHandler {
+    public static final String NAME = "RCTWeChat";
     private String appId;
 
     private IWXAPI api = null;
@@ -105,13 +108,14 @@ public class WeChatModule extends ReactContextBaseJavaModule implements IWXAPIEv
         return baos.toByteArray();
     }
 
-    public WeChatModule(ReactApplicationContext context) {
-        super(context);
+    public WeChatModule(ReactApplicationContext reactContext) {
+        super(reactContext);
     }
 
     @Override
+    @NonNull
     public String getName() {
-        return "RCTWeChat";
+        return NAME;
     }
 
     /**

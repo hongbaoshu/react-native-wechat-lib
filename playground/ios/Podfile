@@ -35,13 +35,3 @@ target 'playground' do
 
   use_native_modules!
 end
-
-target 'playground-tvOS' do
-  # Pods for playground-tvOS
-
-  target 'playground-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-end
